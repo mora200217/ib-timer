@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import moment from 'moment'
-
+import './Timer.css';
   var timeFormat;
   var start;
 
@@ -40,34 +40,37 @@ tick() {
 }
 
 componentDidMount() {
-  if(start){
-   this.interval = setInterval(() => this.tick(), 1000);
- }
+
  }
 
  componentWillUnmount() {
    clearInterval(this.interval);
  }
 
- handleClick(){
- alert("dd");
- }
-
+// componentDidUpdate(){
+// alert("as");
+// }
+//
+//
+//
+// componentWillUpdate(){
+// alert("as");
+// }
 
 
 render(){
   return(
-    <div class = "container">
-      <h3>Time Remaining!</h3>
-      <input type="radio" id="hideIndicator" onchange = {this.handleClick}></input>
-      <div class="container display-2">
-      {moment(this.state.hrs * 10000+ this.state.min * 100 + this.state.sec, timeFormat).format("HH:mm:ss")}
-      </div>
+    <div class = "container timer align-middle">
+      <div class="container display-2" id = "test">00:00:00</div>
+      <p class = "h3 title">Time Remaining</p>
     </div>
 
   );
 }
+handleClick(){
+  this.interval = setInterval(() => this.tick(), 1000);
 
+}
 
 }
 
