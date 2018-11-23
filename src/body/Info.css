@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:900|Quicksand');
+
+
+.my-card{
+  display: block;
+  margin: 100px;
+  padding: 20px;
+  height: 70%;
+  top: -2%;
+}
+
+.card-text{
+  font-family: 'Quicksand', sans-serif;
+}
+.info-list{
+  list-style-type: none;
+  margin: 20px;
+  /* background: red; */
+}
+
+.info-item{
+
+}
+
+.main-card-header{
+  margin: 0px;
+  display: block;
+  padding: 0px;
+ left: 0px;
+ /* background: red; */
+ /* position: static; */
+ right: 0px;
+  width: 100%;
+}
+.primary-text{
+  padding: 0px;
+  /* background: blue; */
+  display: block;
+  margin-bottom: 0px;
+  top: -5px;
+}
+.second-text{
+  padding: 0px;
+  /* background: red; */
+  top: -5px;
+}
+.num-timer{
+  /* background: red; */
+  font-size: 40px;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+}
+
+.info-timer{
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+}
+
+p{
+margin: 0px;
+padding: 0px;
+}
