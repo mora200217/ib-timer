@@ -1,15 +1,22 @@
 import React,{Component} from 'react';
 import Timer from '../body/Timer.js'
-
+import Modal from './Modal.js'
 
 import moment from 'moment'
 
   var timeFormat;
   var start;
+  var index = 0;
 
+const textList = [
+  "60 Minutes Remaining",
+  "30 Minutes Remaining"
+]
+  // const writeJsonFile = require('write-json-file');
 
 class Header extends Component{
   constructor(props){
+
       timeFormat = "mmss"
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -17,43 +24,33 @@ class Header extends Component{
       hrs: 0,
       min: 45,
       sec: 0,
+      hrsLimit: 0,
+      minLimit: 44,
+      secLimit: 56,
     }
+    this.test = this.test.bind(this)
+    // this.test = this.test.bind(this)
   }
-
+test(param){
+console.log("Arg Test: " + param)
+  // this.interval = setInterval(() => this.tick(), 1000);
+}
   render(){
     return(
     <header>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+     <Modal onChange = {this.test.bind(this)}/>
+      <nav class="navbar navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">
+            IB Timer
+          </a>
+        <div class = "row">
+          <button type="button" class="btn btn-outline-light" onClick = {this.handleClick} data-toggle="modal" data-target="#exampleModal">
+            Start Timer
+          </button>
+          <button type="button" class="btn btn-outline-light" onClick = {this.handleClick}>
+            Pause Timer
           </button>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-      <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-          IB Timer
-        </a>
-        <div class = "row">
-      <button type="button" class="btn btn-outline-light" onClick = {this.handleClick} data-toggle="modal" data-target="#exampleModal">
-      Start Timer
-      </button>
-      <button type="button" class="btn btn-outline-light" onClick = {this.handleClick}>
-      Pause Timer
-      </button>
-      </div>
       </nav>
 
     </header>
@@ -79,6 +76,22 @@ class Header extends Component{
     }));
 
   }
+
+  if(this.state.min == this.state.minLimit && this.state.sec == this.state.secLimit && this.state.hrs == this.state.hrsLimit){
+  var x = document.getElementById("change-" + index)
+x.textContent = textList[index]
+  index++;
+
+  this.setState(state => ({
+    minLimit: 44,
+    secLimit: 40,
+  }));
+  }
+
+
+
+
+
   var y = document.getElementById("test")
   // alert(moment(this.state.hrs * 10000+ this.state.min * 100 + this.state.sec, timeFormat).format("HH:mm:ss"))
    y.textContent = moment(this.state.hrs * 10000+ this.state.min * 100 + this.state.sec, timeFormat).format("HH:mm:ss")
@@ -90,7 +103,7 @@ class Header extends Component{
   }
 
   handleClick(){
-      this.interval = setInterval(() => this.tick(), 1000);
+
   }
 }
 

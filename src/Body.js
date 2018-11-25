@@ -7,7 +7,7 @@ class Body extends Component{
   render(){
     return(
       <div class="main row fluid-container h-100 w-100">
-        <div class="timer col">
+        <div class="timer col-lg-7">
           <Timer />
         </div>
 

@@ -1,32 +1,51 @@
 import React, {Component} from 'react'
 import './Info.css'
+import moment from 'moment'
+import TimeData from '../db/times.json'
+
+
 class Info extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      subject: "Any Test",
+      paper: "Some Paper",
+      time: 0,
+      start: "00:00",
+      end: "00:00"
+    }
+  }
 render(){
   return(
-    <div class="card my-card">
-    <div class = "fluid-container main-card-header">
-      <h3 class="card-title display-4">Key Time Points</h3>
-      <p class="card-text">Each interval is going to appear here.</p>
-      </div>
-      <div class="card-body fluid-container">
+  <div class="color">
+    <p class="info-align color-text-title " id = "subject">
+    {this.state.subject}
 
-        <ul class = "info-list">
-          <li>
-          <div class = "row">
-          <div class = "col-lg-2 num-timer">
-            <p><strong>60</strong></p>
-           </div>
-             <div class = "col info-timer">
-          <p class = "h2 primary-text">Minutes</p>
-          <p class = "text-muted second-text">You have an hour left for finishing your exam</p>
-          </div>
+    </p>
+    <p class="info-align  color-text-subtitle "  id = "subject">
+<p  class = "none-p" id = "paper"> {this.state.paper} </p> - <p id = "time" class = "none-p" > {this.state.time * 60} </p> Minutes
+    </p>
+    <p class="info-align  color-text-subtitle-2 ">
+    <strong>  Starting Time: </strong> {this.state.start}
 
-          </div>
-          </li>
+    </p>
+    <p class="info-align  color-text-subtitle-2 ">
+      <strong>Finishing Time:  </strong>{this.state.end}
 
-        </ul>
-      </div>
+    </p>
+    <br/>
+    <br/>
+    <hr/>
+<div>
+    <ul class = "h1 info-list">
+      <li>60 Minutes</li>
+      <li id = "change-0">2</li>
+      <li id = "change-1">3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
     </div>
+  </div>
   );
 }
 }
