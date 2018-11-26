@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './Info.css'
-import moment from 'moment'
-import TimeData from '../db/times.json'
+// import moment from 'moment'
+// import TimeData from '../db/times.json'
 
 
 class Info extends Component{

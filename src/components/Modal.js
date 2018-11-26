@@ -32,6 +32,7 @@ console.clear();
         times_.push({"value":element.duration[i], "label":"Paper " + element.paper[i]});
       }
       times.push(times_)
+      return 0; 
     }
   );
 console.log(times);
@@ -61,14 +62,10 @@ console.log(times);
 
 callParent(){
 this.props.onChange(this.state.time);
-var x = document.getElementById('subject')
-x.textContent = String(this.state.subject);
 
-var x = document.getElementById('paper')
-x.textContent = String(this.state.paper);
-
-var x = document.getElementById('time')
-x.textContent = String(this.state.time * 60);
+document.getElementById('subject').textContent = String(this.state.subject);
+document.getElementById('paper').textContent = String(this.state.paper);
+document.getElementById('time').textContent = String(this.state.time * 60);
 // console.log(x_);
 
 }

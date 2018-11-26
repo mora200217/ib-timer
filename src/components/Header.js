@@ -1,14 +1,18 @@
 import React,{Component} from 'react';
-import Timer from '../body/Timer.js'
+// import Timer from '../body/Timer.js'
 import Modal from './Modal.js'
+import Sound from 'react-sound';
+
+// import {Howl, Howler} from 'howler';
 
 import moment from 'moment'
 
-var timeFormat;
-var start;
+// var timeFormat;
+// var start;
 var index = 0;
 
-const textList = [5,1,15,5];
+const textList = [30,15,5];
+
 
 class Header extends Component{
   constructor(props){
@@ -17,6 +21,8 @@ class Header extends Component{
       time: moment.utc().local().format('hh:mm:ss'),
       keyCall: textList[index],
       keyCondition: "",
+      finalTime: null,
+      totalDuration: null
     }
 
     // Function Binding
@@ -31,7 +37,9 @@ class Header extends Component{
     document.getElementById('en').textContent = moment.utc().local().add(params * 60,'minutes').format('hh:mm');
 
     this.setState({
-      keyCondition: moment.utc().local().add(textList[index],'seconds').format('hh:mm:ss')
+      keyCondition: moment.utc().local().add(params * 60 - textList[index],'minutes').format('hh:mm:ss'),
+      finalTime: moment.utc().local().add(params * 60,'minutes').format('hh:mm:ss'),
+      totalDuration: params * 60
     });
     this.interval = setInterval(() => this.tick(), 1000);
 
@@ -40,21 +48,30 @@ class Header extends Component{
 
   /* Function call each second after timer selected */
   tick(){
+
+
+if(this.state.finalTime !== this.state.time){
+
+
     // Change Timer
     this.setState({time: moment.utc().local().format('hh:mm:ss')});
-    if(this.state.keyCondition == this.state.time){
+    if(this.state.keyCondition === this.state.time){
       document.getElementById('change-'+ index).textContent = String(textList[index] +" Minutes remaining");
       index++;
-      this.setState({keyCondition: moment.utc().local().add(textList[index],'seconds').format('hh:mm:ss')});
+      this.setState({keyCondition: moment.utc().local().add(this.state.totalDuration - textList[index],'minutes').format('hh:mm:ss')});
     }
     document.getElementById("test").textContent = this.state.time; // Timer.js Component Call
+  }else{
+    clearInterval(this.interval);
+    alert("Time is Finished!");
   }
+}
 
   componentWillUnmount() {
     clearInterval(this.interval);
   }
 
-  
+
   /*
   RENDER FUNCTION - - - - - - - - - - - - - - - - - - -
   */
@@ -62,8 +79,15 @@ class Header extends Component{
     return(
       <header>
       <Modal onChange = {this.test.bind(this)}/>
+      <Sound
+     url="test.mp3"
+     playStatus={Sound.status.PLAYING}
+     onLoading={this.handleSongLoading}
+     onPlaying={this.handleSongPlaying}
+     onFinishedPlaying={this.handleSongFinishedPlaying}
+   />
       <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
       IB Timer
       </a>
       <div class = "row">

@@ -1,17 +1,14 @@
 import React, {Component} from 'react'
-import moment from 'moment'
+// import moment from 'moment'
 import './Timer.css';
-import TimesData from '../db/times.json'
-
-
-  var timeFormat;
-  var start;
+// import TimesData from '../db/times.json'
+//
+//
+//   var timeFormat;
+//   var start;
 
 class Timer extends Component{
 
-constructor(props){
-super(props)
-}
 
 render(){
   return(
