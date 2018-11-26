@@ -25,4 +25,10 @@
       "paper": [1,2,3],
       "duration": [0.75,1.25,1.25]
   }
+  ,
+  {
+      "subject": "Patricia ",
+      "paper": [1],
+      "duration": [3]
+  }
 ]

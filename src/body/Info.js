@@ -26,11 +26,11 @@ render(){
 <p  class = "none-p" id = "paper"> {this.state.paper} </p> - <p id = "time" class = "none-p" > {this.state.time * 60} </p> Minutes
     </p>
     <p class="info-align  color-text-subtitle-2 ">
-    <strong>  Starting Time: </strong> {this.state.start}
+    <strong>  Starting Time: </strong> <p  class = "none-p" id = "st">{this.state.start} </p>
 
     </p>
     <p class="info-align  color-text-subtitle-2 ">
-      <strong>Finishing Time:  </strong>{this.state.end}
+      <strong>Finishing Time:  </strong><p  class = "none-p" id = "en">{this.state.end} </p>
 
     </p>
     <br/>
@@ -38,11 +38,10 @@ render(){
     <hr/>
 <div>
     <ul class = "h1 info-list">
-      <li>60 Minutes</li>
-      <li id = "change-0">2</li>
-      <li id = "change-1">3</li>
-      <li>4</li>
-      <li>5</li>
+      <li id = "change-0"></li>
+      <li id = "change-1"></li>
+      <li id = "change-2"></li>
+      <li id = "change-3"></li>
     </ul>
     </div>
   </div>

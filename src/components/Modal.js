@@ -60,7 +60,7 @@ console.log(times);
 
 
 callParent(){
-this.props.onChange();
+this.props.onChange(this.state.time);
 var x = document.getElementById('subject')
 x.textContent = String(this.state.subject);
 

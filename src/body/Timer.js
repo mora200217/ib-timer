@@ -16,7 +16,7 @@ super(props)
 render(){
   return(
     <div class = "container timer align-middle">
-      <div class="container display-2" id = "test">00:00:00</div>
+      <div class="container display-2" id = "test">00:00:00 </div>
       <p class = "h3 title">Time Remaining</p>
     </div>
 
