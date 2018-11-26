@@ -22,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,6 +35,12 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "build": {
+    "appId": "@mora200217",
+    "mac": {
+      "category": "timer"
+    }
+  },
   "devDependencies": {
     "concurrently": "^4.1.0",
     "electron": "^3.0.10",
