@@ -32,7 +32,7 @@ console.clear();
         times_.push({"value":element.duration[i], "label":"Paper " + element.paper[i]});
       }
       times.push(times_)
-      return 0; 
+      return 0;
     }
   );
 console.log(times);
@@ -48,6 +48,8 @@ console.log(times);
         id: input.value,
         subject: input.label,
       });
+      var snd = new Audio("test.mp3");
+      snd.play();
   }
 
   change2(input){
