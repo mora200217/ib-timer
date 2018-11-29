@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo:900|Julius+Sans+One|Quicksand|Rambla');
+.my-card{
+  display: block;
+  margin: 100px;
+  padding: 20px;
+  height: 70%;
+  top: -2%;
+}
+
+.card-text{
+  font-family: 'Quicksand', sans-serif;
+}
+.info-list{
+  list-style-type: none;
+  margin: 20px;
+  /* background: red; */
+  text-align: left;
+  color: white;
+}
+
+.info-item{
+
+}
+
+
+.info-align{
+  text-align: left;
+  padding-left: 3%;
+}
+.color-text-title{
+  font-weight: bold;
+  font-size: 120px;
+  color:white;
+  padding-top: 1%;
+
+}
+
+.line{
+  display: block;
+  width: 200px;
+  background:#e74c3c;
+  height: 20px;
+  margin-left: 3%;
+}
+.color-text-subtitle{
+  font-size: 32px;
+  /* background: red; */
+  margin-top: -1%;
+  margin-bottom: 20px;
+  color:#ecf0f1;
+  font-weight: lighter;
+/* font-family: 'Heebo', sans-serif; */
+  top: -20px;
+
+}
+
+
+.color-text-subtitle-2{
+  font-size: 36px;
+  /* background: red; */
+
+  color:white;
+  font-weight: normal;
+  margin: 0px;
+  top: 0;
+  margin-top: -15px;
+/* font-family: 'Heebo', sans-serif; */
+
+
+}
+.color{
+height: 100%;
+background: #34495e;
+position: fixed;
+width: 100%;
+}
+
+.none-p{
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+
+.main-card-header{
+  margin: 0px;
+  display: block;
+  padding: 0px;
+ left: 0px;
+ /* background: red; */
+ /* position: static; */
+ right: 0px;
+  width: 100%;
+}
+
+
+.primary-text{
+  padding: 0px;
+  /* background: blue; */
+  display: block;
+  margin-bottom: 0px;
+  top: -5px;
+}
+.second-text{
+  padding: 0px;
+  /* background: red; */
+  top: -5px;
+}
+.num-timer{
+  /* background: red; */
+  font-size: 40px;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+}
+
+.info-timer{
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+}
+
+p{
+margin: 0px;
+padding: 0px;
+}
